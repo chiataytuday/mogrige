@@ -4,7 +4,7 @@
 - (장소, 시간 등의 제약을 받지 않는 전시앱)
 
 ## 프로토타입이미지
-<img src= "https://user-images.githubusercontent.com/69412527/92295898-ab1ea580-ef61-11ea-86e0-07552b67c3d6.png"></img>
+<img src= "https://user-images.githubusercontent.com/69412527/92295898-ab1ea580-ef61-11ea-86e0-07552b67c3d6.png">
 
 
 ## 장은비
