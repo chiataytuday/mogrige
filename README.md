@@ -7,9 +7,7 @@
 
 
 ## 프로토타입이미지
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/sosojeon/master/prototype/prototype_01.jpeg">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/sosojeon/master/prototype/prototype_02.jpeg">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/sosojeon/master/prototype/prototype_03.jpeg">
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
 
 
 ---
