@@ -9,7 +9,7 @@
 
 ## 프로토타입이미지
 - HOME
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png", height = "700">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png", width = "500", height = "700">
 <img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_02.png", height = "700">
 
 - Keyword Note
