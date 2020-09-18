@@ -20,7 +20,7 @@
 ![Post_image](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_05.png)
 ![Post_Subscribe](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png)
 
-- Editor
+- Editor<br>
 ![Editor_image](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png)
 
 
