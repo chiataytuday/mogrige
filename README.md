@@ -9,20 +9,19 @@
 
 ## 프로토타입이미지
 - HOME
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_02.png">
+![Home_image](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png)
+![Home_Subscribe](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_02.png)
 
 - Keyword Note
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_03.png">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_04.png">
+![Note_image](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_03.png)
+![Note_Subscribe](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_04.png)
 
 - POST
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_05.png">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png">
+![Post_image](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_05.png)
+![Post_Subscribe](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png)
 
 - Editor
-
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png">
+![Editor_image](https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png)
 
 
 ---
