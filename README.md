@@ -1,12 +1,23 @@
 ## ADS
-- 그림을 그리고 전시를 하고 싶은 아마츄어 작가가
-- 랜덤으로 제시된 3개의 단어를 보고 그림을 그려서
-- 자신만의 포트폴리오를 만들어 나갈 수 있는 앱
+- (1.그림을 꾸준히 그리고 싶은 사람 / 2. 그림을 시작하는데 뭘그릴지 모르는 사람)이
+- (심플한 단어들로 꾸준히 주제를 제공)받고
+- (그림 주제에 대한 다양한 브레인스토밍을)할 수 있는 App
+
 
 ---
 
 
 ## 프로토타입이미지
+- HOME
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+
+- Keyword Note
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+
+- POST
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+
+- Editor
 <img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
 
 
