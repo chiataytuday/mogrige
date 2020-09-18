@@ -9,16 +9,19 @@
 
 ## 프로토타입이미지
 - HOME
-<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_02.png">
 
 - Keyword Note
-<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_03.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_04.png">
 
 - POST
-<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_05.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png">
 
 - Editor
-<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png">
 
 
 ---
