@@ -9,19 +9,19 @@
 
 ## 프로토타입이미지
 - HOME
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_02.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_01.png", height = "700">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_02.png", height = "700">
 
 - Keyword Note
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_03.png">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_04.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_03.png", height = "700">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_04.png", height = "700">
 
 - POST
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_05.png">
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_05.png", height = "700">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png", height = "700">
 
 - Editor
-<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png">
+<img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png", height = "700">
 
 
 ---
