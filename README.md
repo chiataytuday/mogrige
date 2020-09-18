@@ -8,6 +8,16 @@
 
 
 ## 프로토타입이미지
+- HOME
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+
+- Keyword Note
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+
+- POST
+<img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
+
+- Editor
 <img src= "https://github.com/ProjectInTheClass/sosojeon/blob/master/prototype/new_prototype.png?raw=true.jpeg">
 
 
