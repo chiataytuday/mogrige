@@ -21,6 +21,7 @@
 <img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_06.png">
 
 - Editor
+
 <img src= "https://raw.githubusercontent.com/ProjectInTheClass/mogrigea/master/prototype/200918_07.png">
 
 
