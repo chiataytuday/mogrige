@@ -1,3 +1,11 @@
+## PhotoKit 문서
+https://developer.apple.com/documentation/photokit
+
+## PhotoKit의 새로운 기능 WWDC2020
+https://developer.apple.com/news/?id=nvn7mmf1
+
+---
+
 # Photos 프레임워크
 Photos 프레임워크는 iOS 및 macOS에서 사진 애플리케이션, 사진 확장 기능을 지원하는 클래스를 제공한다. Photos 프레임워크를 통해 iOS 및 tvOS에서 iCloud 사진 라이브러리를 포함하여 사진 및 비디오에 직접 접근할 수 있다. 이 프레임워크를 사용하여 화면에 표시 및 재생할 에셋을 검색하고 이미지 또는 비디오를 편집하거나 앨범, 특별한 순간 및 iCloud 공유 앨범과 같은 에셋을 사용하여 작업할 수 있다.
 
@@ -118,3 +126,5 @@ Photos 프레임워크는 다른 애플리케이션이나 다른 기기에서 �
 * PHAssetResourceCreationOptions: 기본 리소스에서 새로운 에셋을 만드는데 영향을 주는 옵션들
 * PHAssetResourceManager: 애샛과 관련된 리소스에 대한 기본 데이터 저장소에 접근하는 방법을 제공
 * PHAssetResourceRequestOptions: 에셋 리소스 관리자가 요청한 기본 에셋 데이터 전달에 영향을 주는 옵션
+
+
