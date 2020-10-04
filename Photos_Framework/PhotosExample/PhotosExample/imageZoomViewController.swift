@@ -8,6 +8,7 @@
 import UIKit
 import Photos
 
+// 제스터 이용한 이미지 확대 및 축소
 class imageZoomViewController: UIViewController, UIScrollViewDelegate {
 
     var asset: PHAsset!

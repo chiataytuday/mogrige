@@ -12,11 +12,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
    
-        
+    // 포토킷 기본 설정
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
     let cellIdentifier: String = "cell"
 
+    // 테이블뷰 삭제 액션
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -29,6 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    // 테이블뷰 삭제후 상태 저장 및 리로드
     func photoLibraryDidChange(_ changeInstance: PHChange) {
         guard let changes = changeInstance.changeDetails(for: fetchResult)
             else { return }
@@ -40,7 +42,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
     }
-    
     
     func requestCollection(){
         let cameraRoll: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
@@ -60,6 +61,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // 포토 라이브러리 권한 설정 및 이미지 불러오기
         let photoAurhorizationStatus = PHPhotoLibrary.authorizationStatus()
         
         switch photoAurhorizationStatus {
@@ -98,6 +101,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
     }
     
+    // 포토라이브러리 연동하는 함수
     func tableView(_ tableView:UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.fetchResult?.count ?? 0
     }
@@ -118,6 +122,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
     }
 
+    
+    // 이미지 자세히 설정
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         guard let nextViewController: imageZoomViewController = segue.destination as? imageZoomViewController else { return }
@@ -130,6 +136,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
     
+    
+    // 카메라 및 사진가져오기 액션시트 + 사진첩, 카메라 접근까지,,, 저장해도 저장이 안됨..
     @IBAction func addImageAndVideo(_ sender: UIBarButtonItem) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
