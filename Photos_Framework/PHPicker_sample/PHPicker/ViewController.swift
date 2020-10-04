@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // 포토라이브러리에서 이미지, 비디오 등 선택하는 기능
     @IBAction func buttonDidTap(_ sender: Any) {
         var configuration = PHPickerConfiguration()
         configuration.selectionLimit = 0
@@ -30,6 +31,7 @@ class ViewController: UIViewController {
 
 extension ViewController: PHPickerViewControllerDelegate {
     
+    // UIImageView에 불러온 이미지 띄우는 기능
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         
         picker.dismiss(animated: true) // 1
