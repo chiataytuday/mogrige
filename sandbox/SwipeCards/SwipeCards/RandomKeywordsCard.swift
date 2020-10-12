@@ -61,7 +61,7 @@ class RandomkeywordsCard: UIViewController {
                 card.alpha = 0
                 return
             } else {
-                //reset the card at the original spot
+                //reset the card on the original spot
                 card.center = self.view.center
                 thumbImageView.alpha = 0
             }
@@ -76,7 +76,7 @@ class RandomkeywordsCard: UIViewController {
     
     
     
-    //swipe animation function + put back at the original spot
+    //swipe animation function + put back on the original spot
     func animate() {
         UIView.animate(withDuration: 0.2, animations: {
             self.keywordsView.center = self.view.center
