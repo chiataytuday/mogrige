@@ -16,6 +16,9 @@
 		07DBF7D025295A2B00CE552F /* PreapareExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBF7CF25295A2B00CE552F /* PreapareExampleTests.swift */; };
 		07DBF7DB25295A2B00CE552F /* PreapareExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBF7DA25295A2B00CE552F /* PreapareExampleUITests.swift */; };
 		07DBF7EF25295C7500CE552F /* MovieListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DBF7EE25295C7500CE552F /* MovieListTableViewController.swift */; };
+		0B517026252978CA007BCB3D /* detailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B517025252978CA007BCB3D /* detailedViewController.swift */; };
+		2C84EFE5252F42EC008B7117 /* orangeMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C84EFE4252F42EC008B7117 /* orangeMenu.storyboard */; };
+		2C84EFF5252F4425008B7117 /* YellowMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C84EFF4252F4425008B7117 /* YellowMenu.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		07DBF7DA25295A2B00CE552F /* PreapareExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreapareExampleUITests.swift; sourceTree = "<group>"; };
 		07DBF7DC25295A2B00CE552F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07DBF7EE25295C7500CE552F /* MovieListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListTableViewController.swift; sourceTree = "<group>"; };
+		0B517025252978CA007BCB3D /* detailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailedViewController.swift; sourceTree = "<group>"; };
+		2C84EFE4252F42EC008B7117 /* orangeMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = orangeMenu.storyboard; sourceTree = "<group>"; };
+		2C84EFF4252F4425008B7117 /* YellowMenu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = YellowMenu.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +111,12 @@
 				07DBF7BA25295A2800CE552F /* SceneDelegate.swift */,
 				07DBF7BC25295A2800CE552F /* ViewController.swift */,
 				07DBF7BE25295A2800CE552F /* Main.storyboard */,
+				2C84EFF4252F4425008B7117 /* YellowMenu.storyboard */,
+				2C84EFE4252F42EC008B7117 /* orangeMenu.storyboard */,
 				07DBF7C125295A2A00CE552F /* Assets.xcassets */,
 				07DBF7C325295A2A00CE552F /* LaunchScreen.storyboard */,
 				07DBF7C625295A2A00CE552F /* Info.plist */,
+				0B517025252978CA007BCB3D /* detailedViewController.swift */,
 				07DBF7EE25295C7500CE552F /* MovieListTableViewController.swift */,
 			);
 			path = PreapareExample;
@@ -235,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DBF7C525295A2A00CE552F /* LaunchScreen.storyboard in Resources */,
+				2C84EFF5252F4425008B7117 /* YellowMenu.storyboard in Resources */,
+				2C84EFE5252F42EC008B7117 /* orangeMenu.storyboard in Resources */,
 				07DBF7C225295A2A00CE552F /* Assets.xcassets in Resources */,
 				07DBF7C025295A2800CE552F /* Main.storyboard in Resources */,
 			);
@@ -261,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B517026252978CA007BCB3D /* detailedViewController.swift in Sources */,
 				07DBF7EF25295C7500CE552F /* MovieListTableViewController.swift in Sources */,
 				07DBF7BD25295A2800CE552F /* ViewController.swift in Sources */,
 				07DBF7B925295A2800CE552F /* AppDelegate.swift in Sources */,
@@ -443,6 +455,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PreapareExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -462,6 +475,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PreapareExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -481,7 +495,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PreapareExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,7 +517,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PreapareExampleTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -524,6 +538,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PreapareExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -544,6 +559,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4QG3GC35LA;
 				INFOPLIST_FILE = PreapareExampleUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
