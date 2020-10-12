@@ -95,7 +95,7 @@
                             <constraint firstItem="3Ed-n3-f3S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wCd-FJ-kTQ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house.fill" catalog="system" id="caJ-4c-7PG"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house.fill" id="caJ-4c-7PG"/>
                     <connections>
                         <outlet property="keyword01" destination="clt-sB-G9B" id="emR-9e-ph1"/>
                         <outlet property="keyword02" destination="3iI-R1-WDk" id="iI0-qH-TFz"/>
@@ -146,7 +146,6 @@
         <!--Keywords List-->
         <scene sceneID="rUb-6b-b2v">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CCn-NO-G88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tableViewController modalPresentationStyle="overFullScreen" id="Wqe-LL-exX" customClass="KeyListTableViewController" customModule="mogrige" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KIZ-8A-xtz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -217,6 +216,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Keywords List" largeTitleDisplayMode="always" id="ob4-4n-Wwv"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CCn-NO-G88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2898.5507246376815" y="79.6875"/>
         </scene>
@@ -255,11 +255,11 @@
             </objects>
             <point key="canvasLocation" x="1029" y="-275"/>
         </scene>
-        <!--Item-->
+        <!--keywords-->
         <scene sceneID="hA6-ts-rZV">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gQQ-wu-VLR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="briefcase.fill" catalog="system" id="hg9-2b-bjM"/>
+                    <tabBarItem key="tabBarItem" title="keywords" image="briefcase" catalog="system" selectedImage="briefcase.fill" id="hg9-2b-bjM"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="i7q-6y-vGp"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="JNW-0X-lCV">
@@ -277,7 +277,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="briefcase" catalog="system" width="128" height="102"/>
         <image name="briefcase.fill" catalog="system" width="128" height="105"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

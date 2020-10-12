@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         var resultSet = Set<String>()
 
         while resultSet.count < 3 {
-            let randomIndext = Int(arc4random_uniform(UInt32(keywordList.count)))
+            let randomIndext = Int.random(in: 0...keywordList.count-1)
             resultSet.insert(keywordList[randomIndext])
         }
         let resultArray = Array(resultSet)
