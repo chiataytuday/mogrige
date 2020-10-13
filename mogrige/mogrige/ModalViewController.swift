@@ -21,16 +21,19 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-                
+        // textview placeholder 기본 설정
+        textDescription.delegate = self
+        textDescription.text = "단어를 보고 떠오르는 생각을 적어주세요"
+        textDescription.textColor = UIColor.lightGray
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        // 랜덤으로 선택한 키워드를 label에 보여주기
         mainTitle.text = selectedTitle
     }
     
     
-    
+    // 이미지 추가 버튼 클릭시 액션시트 구현 및 카메라, 포토라이브러리 설정
     @IBAction func buttonDidTap(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -61,6 +64,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
         }
     
+    // 선택한 이미지를 UIImageView에 띄우는 기능
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
@@ -75,6 +79,32 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
 
     }
+    
+    
+    // textView placeholder 구현 함수
+    func textViewSetupView() {
+        if textDescription.textColor == UIColor.lightGray {
+            textDescription.text = nil
+            textDescription.textColor = UIColor.black
+        } else if textDescription.textColor == UIColor.black {
+            textDescription.text = "단어를 보고 떠오르는 생각을 적어주세요"
+            textDescription.textColor = UIColor.lightGray
+        }
+    }
+}
+
+// textView placeholder 상태 전달
+extension ModalViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        textViewSetupView()
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        textViewSetupView()
+    }
+    
+}
 
 
 /*
@@ -100,5 +130,5 @@ extension ModalViewController: PHPickerViewControllerDelegate {
     }
    */
     
-}
+
 

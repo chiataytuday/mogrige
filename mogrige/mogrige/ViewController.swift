@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         
     }
     
+    // 랜덤키워드 만들기
     func randomPicked() {
         var resultSet = Set<String>()
 
@@ -41,17 +42,20 @@ class ViewController: UIViewController {
         randomPicked()
     }
 
+    // 리픽 버튼 눌렀을때 랜덤픽하기
     @IBAction func rePick(_ sender: Any) {
         randomPicked()
     }
     
+    
+    // 모달에 데이터 전달하기
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         let pickedKeword = [keyword01.text, keyword02.text, keyword03.text]
 
         guard let vc = segue.destination as? ModalViewController else { return }
         
-        let selectedTitle:String! = "#\(pickedKeword[0]!), #\(pickedKeword[1]!), #\(pickedKeword[2]!)"
+        let selectedTitle:String! = "#\(pickedKeword[0]!),  #\(pickedKeword[1]!),  #\(pickedKeword[2]!)"
 
         vc.selectedTitle = selectedTitle
         
