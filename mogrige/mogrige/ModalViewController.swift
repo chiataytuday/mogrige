@@ -6,16 +6,12 @@
 //
 
 import UIKit
-import PhotosUI
-import Photos
+import MobileCoreServices
 
 class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+        
+    let imagePicker: UIImagePickerController! = UIImagePickerController()
     
-    
-    var fetchResult: PHFetchResult<PHAsset>!
-    let imageManager: PHCachingImageManager = PHCachingImageManager()
-    let cellIdentifier: String = "cell"
-
     var selectedTitle: String?
     
     @IBOutlet weak var mainImage: UIImageView!
@@ -25,22 +21,24 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-        
+                
     }
     
     override func viewWillAppear(_ animated: Bool) {
         mainTitle.text = selectedTitle
     }
     
-    @IBAction func buttonDidTap(_ sender: Any) {
+    
+    
+    @IBAction func buttonDidTap(_ sender: UIButton) {
         let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let imoportFromAlbum = UIAlertAction(title: "앨범에서 가져오기", style: .default) { _ in
             let picker = UIImagePickerController()
             picker.delegate = self
-            picker.sourceType = .savedPhotosAlbum
+            picker.sourceType = .photoLibrary
+            picker.mediaTypes = [kUTTypeImage as String]
             picker.allowsEditing = false
             self.present(picker, animated: true, completion: nil)
         }
@@ -49,6 +47,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
             picker.delegate = self
             picker.sourceType = .camera
             picker.cameraCaptureMode = .photo
+            picker.mediaTypes = [kUTTypeImage as String]
             picker.allowsEditing = false
             self.present(picker, animated: true, completion: nil)
         }
@@ -58,19 +57,25 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         actionSheet.addAction(takePhoto)
         actionSheet.addAction(cancel)
         
-
         self.present(actionSheet, animated: true, completion: nil)
+
+        }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
+        let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
         
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            picker.dismiss(animated: true)
-            if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                    self.mainImage.image = uiImage
-                }
-            }        
+        if mediaType.isEqual(to: kUTTypeImage as NSString as String){
+            
+            let captureImage = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            UIImageWriteToSavedPhotosAlbum(captureImage, self, nil, nil)
+            mainImage.image = captureImage
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+
     }
 
-}
 
 /*
 extension ModalViewController: PHPickerViewControllerDelegate {
@@ -93,5 +98,7 @@ extension ModalViewController: PHPickerViewControllerDelegate {
             // TODO: Handle empty results or item provider not being able load UIImage
         }
     }
+   */
+    
 }
-*/
+
