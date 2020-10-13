@@ -44,6 +44,18 @@ class ViewController: UIViewController {
     @IBAction func rePick(_ sender: Any) {
         randomPicked()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        let pickedKeword = [keyword01.text, keyword02.text, keyword03.text]
+
+        guard let vc = segue.destination as? ModalViewController else { return }
+        
+        let selectedTitle:String! = "#\(pickedKeword[0]!), #\(pickedKeword[1]!), #\(pickedKeword[2]!)"
+
+        vc.selectedTitle = selectedTitle
+        
+    }
 
 
 }

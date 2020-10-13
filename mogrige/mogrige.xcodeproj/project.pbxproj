@@ -16,7 +16,6 @@
 		070B1FA9251B5FEB007342B8 /* mogrigeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1FA8251B5FEB007342B8 /* mogrigeTests.swift */; };
 		070B1FB4251B5FEB007342B8 /* mogrigeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1FB3251B5FEB007342B8 /* mogrigeUITests.swift */; };
 		070B1FE8251CA17C007342B8 /* model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1FE7251CA17C007342B8 /* model.swift */; };
-		070B1FF4251CA1ED007342B8 /* StampListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070B1FF3251CA1ED007342B8 /* StampListViewController.swift */; };
 		078955A2252C25B600DB66E3 /* KeyListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */; };
 		078955A7252C260600DB66E3 /* KeyListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */; };
 		078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078955AB252C263A00DB66E3 /* DetailViewController.swift */; };
@@ -56,7 +55,6 @@
 		070B1FB3251B5FEB007342B8 /* mogrigeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mogrigeUITests.swift; sourceTree = "<group>"; };
 		070B1FB5251B5FEB007342B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		070B1FE7251CA17C007342B8 /* model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = model.swift; sourceTree = "<group>"; };
-		070B1FF3251CA1ED007342B8 /* StampListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampListViewController.swift; sourceTree = "<group>"; };
 		078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewController.swift; sourceTree = "<group>"; };
 		078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyListTableViewCell.swift; sourceTree = "<group>"; };
 		078955AB252C263A00DB66E3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				070B1F9A251B5FEB007342B8 /* Assets.xcassets */,
 				070B1F9C251B5FEB007342B8 /* LaunchScreen.storyboard */,
 				070B1F9F251B5FEB007342B8 /* Info.plist */,
-				070B1FF3251CA1ED007342B8 /* StampListViewController.swift */,
 				078955A1252C25B600DB66E3 /* KeyListTableViewController.swift */,
 				078955A6252C260600DB66E3 /* KeyListTableViewCell.swift */,
 				078955AB252C263A00DB66E3 /* DetailViewController.swift */,
@@ -290,7 +287,6 @@
 				070B1FE8251CA17C007342B8 /* model.swift in Sources */,
 				070B1F96251B5FE9007342B8 /* ViewController.swift in Sources */,
 				070B1F92251B5FE9007342B8 /* AppDelegate.swift in Sources */,
-				070B1FF4251CA1ED007342B8 /* StampListViewController.swift in Sources */,
 				070B1F94251B5FE9007342B8 /* SceneDelegate.swift in Sources */,
 				078955AC252C263A00DB66E3 /* DetailViewController.swift in Sources */,
 			);

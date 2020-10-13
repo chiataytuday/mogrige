@@ -125,18 +125,59 @@
                                     <segue destination="YSR-an-9fx" kind="unwind" unwindAction="closeModal:" id="YgK-lz-8nj"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGg-3s-kVO">
+                                <rect key="frame" x="20" y="82" width="374" height="309"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNE-z7-uHa">
+                                <rect key="frame" x="20" y="410" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTd-c4-p6g">
+                                <rect key="frame" x="354" y="351" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDidTap:" destination="LV5-Nx-cvj" eventType="touchUpInside" id="xq8-oS-Tam"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="단어를 보고 떠오르는 생각을 적어보세요" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-7t-n2u">
+                                <rect key="frame" x="20" y="454" width="374" height="408"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cC2-AF-4DX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cC2-AF-4DX" firstAttribute="bottom" secondItem="fGg-3s-kVO" secondAttribute="bottom" constant="471" id="7PJ-KI-YYk"/>
+                            <constraint firstItem="bNE-z7-uHa" firstAttribute="width" secondItem="fGg-3s-kVO" secondAttribute="width" id="NKl-Kh-Poe"/>
                             <constraint firstItem="The-CS-V8c" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jbg-wo-R6h" secondAttribute="trailing" constant="8" symbolic="YES" id="QW4-W1-wik"/>
+                            <constraint firstItem="bNE-z7-uHa" firstAttribute="leading" secondItem="fGg-3s-kVO" secondAttribute="leading" id="Wa0-9S-z7M"/>
                             <constraint firstItem="Jbg-wo-R6h" firstAttribute="leading" secondItem="Qds-mz-khB" secondAttribute="leadingMargin" id="gPx-yT-rAK"/>
+                            <constraint firstItem="fGg-3s-kVO" firstAttribute="leading" secondItem="Jbg-wo-R6h" secondAttribute="leading" id="hoa-hw-Kn3"/>
                             <constraint firstItem="The-CS-V8c" firstAttribute="top" secondItem="cC2-AF-4DX" secondAttribute="top" id="mQc-6L-zBJ"/>
+                            <constraint firstItem="cC2-AF-4DX" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bNE-z7-uHa" secondAttribute="trailing" symbolic="YES" id="qX4-Jg-a1D"/>
+                            <constraint firstItem="fGg-3s-kVO" firstAttribute="top" secondItem="The-CS-V8c" secondAttribute="bottom" constant="8" id="ql8-Xi-0fV"/>
+                            <constraint firstItem="fGg-3s-kVO" firstAttribute="centerX" secondItem="Qds-mz-khB" secondAttribute="centerX" id="tat-Xg-rrS"/>
                             <constraint firstItem="The-CS-V8c" firstAttribute="baseline" secondItem="Jbg-wo-R6h" secondAttribute="baseline" id="vHh-hh-PM5"/>
                             <constraint firstItem="The-CS-V8c" firstAttribute="trailing" secondItem="Qds-mz-khB" secondAttribute="trailingMargin" id="xK2-f7-fqh"/>
+                            <constraint firstItem="bNE-z7-uHa" firstAttribute="top" secondItem="fGg-3s-kVO" secondAttribute="bottom" constant="19" id="y1E-va-TXy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jxu-fV-u7Z"/>
+                    <connections>
+                        <outlet property="mainImage" destination="fGg-3s-kVO" id="pcJ-1Q-A9x"/>
+                        <outlet property="mainTitle" destination="bNE-z7-uHa" id="x5x-l4-ei9"/>
+                        <outlet property="textDescription" destination="h7N-7t-n2u" id="ObI-sz-WVg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TRj-32-iaC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="YSR-an-9fx" userLabel="Exit" sceneMemberID="exit"/>
@@ -281,6 +322,10 @@
         <image name="briefcase.fill" catalog="system" width="128" height="105"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
