@@ -49,14 +49,14 @@ class RandomkeywordsCard: UIViewController {
             if card.center.x < 75 {
                 // move off to the left side
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x - 300, y: card.center.y + 50)
+                    card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
                 })
                 card.alpha = 0
                 return
             } else if card.center.x > (view.frame.width - 75) {
                 // move off to the right side
                 UIView.animate(withDuration: 0.3,animations: {
-                    card.center = CGPoint(x: card.center.x + 300, y: card.center.y + 50)
+                    card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
                 })
                 card.alpha = 0
                 return

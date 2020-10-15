@@ -20,10 +20,10 @@ class ViewController: UIViewController {
     
     @IBAction func closeModal(
         _ segue: UIStoryboardSegue) {
-        
     }
     
     var divisor: CGFloat!
+    var lastKeywords: Array<Any> = []
     
     
     //swipe animation 구현
@@ -61,6 +61,7 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 0.3, animations: {
                     card.center = CGPoint(x: card.center.x - 300, y: card.center.y + 61)
                 })
+                lastKeywords = [keyword01.text!, keyword02.text!, keyword03.text!]
                 cardFormatReset()
                 randomPicked()
                 return
@@ -77,6 +78,8 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    
     //카드가 끝까지 넘어가지 않은 경우 원래 자리로 복귀
     func animate() {
         UIView.animate(withDuration: 0.2, animations: {
@@ -84,18 +87,26 @@ class ViewController: UIViewController {
         })
     }
     
-    //temporary reset button
+    
+    
+    //직전 단어 다시 보기 버튼
     func resetCard() {
         animate()
         self.thumbImageView.alpha = 0
         self.cardView.alpha = 1
         self.cardView.transform = .identity
+        
+        keyword01.text = lastKeywords[0] as? String
+        keyword02.text = lastKeywords[1] as? String
+        keyword03.text = lastKeywords[2] as? String
     }
+    
+    
     
     // 랜덤키워드 만들기
     func randomPicked() {
         var resultSet = Set<String>()
-
+        
         while resultSet.count < 3 {
             let randomIndext = Int.random(in: 0...keywordList.count-1)
             resultSet.insert(keywordList[randomIndext])
@@ -105,22 +116,30 @@ class ViewController: UIViewController {
         keyword01.text = resultArray[0]
         keyword02.text = resultArray[1]
         keyword03.text = resultArray[2]
+        
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //카드 회전 애니메이션 추가
+        //카드 tilt 애니메이션 추가
         divisor = (view.frame.width / 2) / 0.61
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         randomPicked()
     }
 
+    
+    
     // 리픽 버튼 눌렀을때 랜덤픽하기 ---> swipe 적용으로 리픽버튼 OFF
 //    @IBAction func rePick(_ sender: Any) {
 //        randomPicked()
 //    }
+    
     
     
     // 모달에 데이터 전달하기
