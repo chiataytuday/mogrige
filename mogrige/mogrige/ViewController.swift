@@ -70,7 +70,7 @@ class ViewController: UIViewController {
                 UIView.animate(withDuration: 0.3,animations: {
                     card.center = CGPoint(x: card.center.x + 300, y: card.center.y + 61)
                 })
-                //화면전환
+                //화면전환 "ModalViewController"의 sroryboardID 지정 필요
                 let modalVC = self.storyboard?.instantiateViewController(withIdentifier: "modalVC")
                 modalVC?.modalTransitionStyle = .coverVertical
                 self.present(modalVC!, animated: true, completion: nil)
