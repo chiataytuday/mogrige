@@ -77,8 +77,6 @@ class ViewController: UIViewController {
                
                 cardFormatReset()
                 return
-            } else {
-                cardFormatReset()
             }
         }
     }
@@ -91,22 +89,6 @@ class ViewController: UIViewController {
             self.cardView.center = self.view.center
         })
     }
-    
-    
-    
-    //직전 단어 다시 보기 버튼
-    func resetCard() {
-        animate()
-        self.thumbImageView.alpha = 0
-        self.cardView.alpha = 1
-        self.cardView.transform = .identity
-        
-        keyword01.text = lastKeywords[0] as? String
-        keyword02.text = lastKeywords[1] as? String
-        keyword03.text = lastKeywords[2] as? String
-    }
-    
-    
     
     // 랜덤키워드 만들기
     func randomPicked() {
@@ -124,6 +106,17 @@ class ViewController: UIViewController {
         
     }
     
+    //직전 단어 다시 보기 버튼
+    func resetCard() {
+        animate()
+        self.thumbImageView.alpha = 0
+        self.cardView.alpha = 1
+        self.cardView.transform = .identity
+        
+        keyword01.text = lastKeywords[0] as? String
+        keyword02.text = lastKeywords[1] as? String
+        keyword03.text = lastKeywords[2] as? String
+    }
     
     
     override func viewDidLoad() {
@@ -134,7 +127,7 @@ class ViewController: UIViewController {
     
     
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         randomPicked()
     }
 
@@ -154,7 +147,7 @@ class ViewController: UIViewController {
 
         guard let vc = segue.destination as? ModalViewController else { return }
         
-        let selectedTitle:String! = "#\(pickedKeword[0]!),  #\(pickedKeword[1]!),  #\(pickedKeword[2]!)"
+        let selectedTitle:String! = "\(pickedKeword[0]!),  \(pickedKeword[1]!),  \(pickedKeword[2]!)"
 
         vc.selectedTitle = selectedTitle
         
