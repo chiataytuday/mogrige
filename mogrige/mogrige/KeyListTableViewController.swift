@@ -9,10 +9,15 @@ import UIKit
 
 class KeyListTableViewController: UITableViewController {
     
+    var fetchResult = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell" )
+                tableView.delegate = self
+                tableView.dataSource = self
     }
+    
 
 
     // tableView 세팅
@@ -39,5 +44,17 @@ class KeyListTableViewController: UITableViewController {
 
         return cell
     }
+    
+    //tableView 스와이프해서 삭제하기
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            Post_List.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
+    }
 
 }
+
+
+    
+    
