@@ -14,22 +14,26 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     var selectedTitle: String?
     
-    @IBOutlet weak var mainImage: UIImageView!
     @IBOutlet weak var mainTitle: UILabel!
+    @IBOutlet weak var textTitle: UITextView!
     @IBOutlet weak var textDescription: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // textview placeholder 기본 설정
-        textDescription.delegate = self
-        textDescription.text = "단어를 보고 떠오르는 생각을 적어주세요"
-        textDescription.textColor = UIColor.lightGray
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        // 랜덤으로 선택한 키워드를 label에 보여주기
+        
+        // title Label에 랜덤키워드 띄우기
         mainTitle.text = selectedTitle
+        
+        // textview placeholder 기본 설정
+        textTitle.delegate = self
+        textTitle.text = "세 단어로 하나의 타이틀 문장을 만들어 주세요"
+        textTitle.textColor = UIColor.lightGray
+        
+        textDescription.delegate = self
+        textDescription.text = "떠오른 영감을 설명해 주세요"
+        textDescription.textColor = UIColor.lightGray
+        
     }
     
     
@@ -65,6 +69,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     
     // 선택한 이미지를 UIImageView에 띄우는 기능
+    /*
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let mediaType = info[UIImagePickerController.InfoKey.mediaType] as! NSString
@@ -79,7 +84,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
 
     }
-    
+    */
     
     // textView placeholder 구현 함수
     func textViewSetupView() {
@@ -87,9 +92,18 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
             textDescription.text = nil
             textDescription.textColor = UIColor.black
         } else if textDescription.textColor == UIColor.black {
-            textDescription.text = "단어를 보고 떠오르는 생각을 적어주세요"
+            textDescription.text = "떠오른 영감을 설명해 주세요"
             textDescription.textColor = UIColor.lightGray
         }
+        
+        if textTitle.textColor == UIColor.lightGray {
+            textTitle.text = nil
+            textTitle.textColor = UIColor.black
+        } else if textTitle.textColor == UIColor.black {
+            textTitle.text = "세 단어로 하나의 타이틀 문장을 만들어 주세요"
+            textTitle.textColor = UIColor.lightGray
+        }
+        
     }
 }
 
