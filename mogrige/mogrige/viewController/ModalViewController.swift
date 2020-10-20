@@ -18,6 +18,10 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var textTitle: UITextView!
     @IBOutlet weak var textDescription: UITextView!
     
+    @IBAction func backMoadal(
+        _ segue: UIStoryboardSegue) {
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
