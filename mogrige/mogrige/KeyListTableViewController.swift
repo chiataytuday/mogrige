@@ -9,6 +9,13 @@ import UIKit
 
 class KeyListTableViewController: UITableViewController {
     
+<<<<<<< Updated upstream:mogrige/mogrige/KeyListTableViewController.swift
+=======
+
+    
+    var fetchResult = UITableView()
+    
+>>>>>>> Stashed changes:mogrige/mogrige/viewController/KeyListTableViewController.swift
     override func viewDidLoad() {
         super.viewDidLoad()
         
