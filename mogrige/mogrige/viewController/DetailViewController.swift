@@ -15,7 +15,23 @@ class DetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    
+    
+    // 더미 데이터
+    @IBOutlet weak var artImg: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        artImg.image = UIImage(named: "thumbsUp")
+    }
+    
+    
+    //공유기능(더미사진)
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let items = [artImg.image!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
     /*
     // MARK: - Navigation
 

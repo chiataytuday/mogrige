@@ -9,8 +9,18 @@ import UIKit
 
 class KeyListTableViewController: UITableViewController {
     
+<<<<<<< HEAD:mogrige/mogrige/viewController/KeyListTableViewController.swift
     var fetchResult = UITableView()
     
+=======
+<<<<<<< Updated upstream:mogrige/mogrige/KeyListTableViewController.swift
+=======
+
+    
+    var fetchResult = UITableView()
+    
+>>>>>>> Stashed changes:mogrige/mogrige/viewController/KeyListTableViewController.swift
+>>>>>>> hyobeen:mogrige/mogrige/KeyListTableViewController.swift
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell" )

@@ -84,11 +84,11 @@ class ViewController: UIViewController {
     
     
     //카드가 끝까지 넘어가지 않은 경우 원래 자리로 복귀
-//    func animate() {
-//        UIView.animate(withDuration: 0.2, animations: {
-//            self.cardView.center = self.view.center
-//        })
-//    }
+    func animate() {
+        UIView.animate(withDuration: 0.2, animations: {
+            self.cardView.center = self.view.center
+        })
+    }
     
     // 랜덤키워드 만들기
     func randomPicked() {
@@ -108,7 +108,7 @@ class ViewController: UIViewController {
     
     //직전 단어 다시 보기 버튼
     func resetCard() {
-        //animate()
+        animate()
         self.thumbImageView.alpha = 0
         self.cardView.alpha = 1
         self.cardView.transform = .identity
