@@ -42,6 +42,7 @@ class ViewController: UIViewController {
             card.center = self.view.center
             thumbImageView.alpha = 0
             card.transform = CGAffineTransform.identity
+            animate()
         }
         
         
@@ -77,6 +78,8 @@ class ViewController: UIViewController {
                
                 cardFormatReset()
                 return
+            } else {
+                cardFormatReset()
             }
         }
     }
