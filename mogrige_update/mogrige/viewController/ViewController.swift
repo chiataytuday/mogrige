@@ -77,6 +77,8 @@ class ViewController: UIViewController {
                
                 cardFormatReset()
                 return
+            } else {
+                cardFormatReset()
             }
         }
     }
