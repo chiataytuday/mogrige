@@ -23,6 +23,11 @@
 		2C4AD126254539F4008CCC3C /* KeywordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */; };
 		2C4AD12B25453A12008CCC3C /* KeywordList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */; };
 		2CF8270D2545BA9600EAB26B /* KeywordListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */; };
+		AA400B3B2549A03900B9EF66 /* DetailMoodboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */; };
+		AAA4F0112549A82B001B8B2E /* NotoSerifCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F00D2549A828001B8B2E /* NotoSerifCJKkr-Medium.otf */; };
+		AAA4F0122549A82B001B8B2E /* NotoSerifCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F00E2549A829001B8B2E /* NotoSerifCJKkr-Bold.otf */; };
+		AAA4F0132549A82B001B8B2E /* NotoSerifCJKkr-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F00F2549A82A001B8B2E /* NotoSerifCJKkr-SemiBold.otf */; };
+		AAA4F0142549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = AAA4F0102549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		2C4AD125254539F4008CCC3C /* KeywordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListViewController.swift; sourceTree = "<group>"; };
 		2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KeywordList.storyboard; sourceTree = "<group>"; };
 		2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordListTableViewCell.swift; sourceTree = "<group>"; };
+		AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailMoodboard.storyboard; sourceTree = "<group>"; };
+		AAA4F00D2549A828001B8B2E /* NotoSerifCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		AAA4F00E2549A829001B8B2E /* NotoSerifCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		AAA4F00F2549A82A001B8B2E /* NotoSerifCJKkr-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-SemiBold.otf"; sourceTree = "<group>"; };
+		AAA4F0102549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifCJKkr-Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				070B1F90251B5FE9007342B8 /* mogrige */,
+				AAA4F0182549A84A001B8B2E /* font */,
 				072FAB58253DBDFE0053983F /* delegate */,
 				070B1FA7251B5FEB007342B8 /* mogrigeTests */,
 				070B1FB2251B5FEB007342B8 /* mogrigeUITests */,
@@ -119,6 +130,7 @@
 				070B1FE6251CA16B007342B8 /* model */,
 				072FAB53253DBDB80053983F /* viewController */,
 				2C4AD12A25453A12008CCC3C /* KeywordList.storyboard */,
+				AA400B3A2549A03900B9EF66 /* DetailMoodboard.storyboard */,
 				070B1F97251B5FE9007342B8 /* Main.storyboard */,
 				070B1F9A251B5FEB007342B8 /* Assets.xcassets */,
 				070B1F9F251B5FEB007342B8 /* Info.plist */,
@@ -182,6 +194,17 @@
 				2CF8270C2545BA9600EAB26B /* KeywordListTableViewCell.swift */,
 			);
 			path = KeywordList;
+			sourceTree = "<group>";
+		};
+		AAA4F0182549A84A001B8B2E /* font */ = {
+			isa = PBXGroup;
+			children = (
+				AAA4F00E2549A829001B8B2E /* NotoSerifCJKkr-Bold.otf */,
+				AAA4F00D2549A828001B8B2E /* NotoSerifCJKkr-Medium.otf */,
+				AAA4F0102549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf */,
+				AAA4F00F2549A82A001B8B2E /* NotoSerifCJKkr-SemiBold.otf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,9 +310,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA4F0112549A82B001B8B2E /* NotoSerifCJKkr-Medium.otf in Resources */,
+				AAA4F0132549A82B001B8B2E /* NotoSerifCJKkr-SemiBold.otf in Resources */,
 				070B1F9B251B5FEB007342B8 /* Assets.xcassets in Resources */,
+				AAA4F0122549A82B001B8B2E /* NotoSerifCJKkr-Bold.otf in Resources */,
 				2C4AD12B25453A12008CCC3C /* KeywordList.storyboard in Resources */,
 				070B1F99251B5FE9007342B8 /* Main.storyboard in Resources */,
+				AAA4F0142549A82B001B8B2E /* NotoSerifCJKkr-Regular.otf in Resources */,
+				AA400B3B2549A03900B9EF66 /* DetailMoodboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
