@@ -66,7 +66,7 @@
                                                             <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                             <state key="normal" image="bookmark" catalog="system"/>
                                                         </button>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KeywordTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyt-QQ-pWr">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KeywordTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iyt-QQ-pWr">
                                                             <rect key="frame" x="10" y="68" width="327" height="29"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -122,6 +122,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="FUn-lm-ihg"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="boardTotalNum" destination="lhM-C8-q5S" id="vBJ-NH-Hvs"/>
                         <outlet property="keywordListTableView" destination="uQh-VX-6RA" id="WL3-1k-0VE"/>
                     </connections>
                 </viewController>

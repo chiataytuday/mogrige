@@ -14,7 +14,8 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     let customCellIdentifier: String = "customCell"
     
     @IBOutlet weak var keywordListTableView: UITableView!
-    
+
+    @IBOutlet weak var boardTotalNum: UILabel!
     
 
     
@@ -54,7 +55,10 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         if editingStyle == UITableViewCell.EditingStyle.delete {
             Post_List.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+            boardTotalNum.text = "총\(Post_List.count)개의 보드"
         }
+        
     }
     
     //기본 세팅
@@ -65,6 +69,9 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        boardTotalNum.text = "총\(Post_List.count)개의 보드"
+    }
     
     /*
     public protocol UITableViewDataSource : NSObjectProtocol {
