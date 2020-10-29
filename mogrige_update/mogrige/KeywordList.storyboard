@@ -33,6 +33,9 @@
                             <searchBar contentMode="redraw" placeholder="내가 저장한 단어 중에서 찾아드립니다." translatesAutoresizingMaskIntoConstraints="NO" id="wA7-yD-h6r">
                                 <rect key="frame" x="0.0" y="83" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Gvl-md-AKY" id="8z7-S8-qMo"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uQh-VX-6RA">
                                 <rect key="frame" x="0.0" y="198" width="414" height="615"/>
@@ -124,6 +127,7 @@
                     <connections>
                         <outlet property="boardTotalNum" destination="lhM-C8-q5S" id="vBJ-NH-Hvs"/>
                         <outlet property="keywordListTableView" destination="uQh-VX-6RA" id="WL3-1k-0VE"/>
+                        <outlet property="searchBar" destination="wA7-yD-h6r" id="Y7F-zV-eNU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7W-jb-7S7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
