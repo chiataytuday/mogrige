@@ -26,7 +26,10 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var textFrame2: UILabel!
     @IBOutlet weak var textFrame3: UILabel!
     
-
+    @IBAction func closeButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     
     
