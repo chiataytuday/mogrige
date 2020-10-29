@@ -8,15 +8,18 @@
 import UIKit
 
 //필수 프로토콜 추가(dataSource, Delegate)
-class KeywordListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class KeywordListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     
+    var filteredData:[String] = []
+    var keywordsData:[String] = []
     let cellIdentifier: String = "cell"
     let customCellIdentifier: String = "customCell"
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var keywordListTableView: UITableView!
+    @IBOutlet weak var boardTotalNum: UILabel!
     
-    
-
+    //
     
     //Cell 높이 조절
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -25,7 +28,7 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // tableView 열 세팅
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Post_List.count
+        return filteredData.count
     }
     
     // tableView 세팅
@@ -36,15 +39,16 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     
     // tableView에 데이터 입력
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! KeywordListTableViewCell
                 
-        let postListCell = Post_List[indexPath.row]
+        let postListCell = filteredData[indexPath.row]
         
         //board 내 그림 번호 설정
         cell.boardNum?.text = "Board #\(indexPath.row + 1)"
         
         //키워드로 타이틀 설정
-        cell.keywordTitle?.text = "#\(postListCell.keyword01), #\(postListCell.keyword02), #\(postListCell.keyword03)"
+        cell.keywordTitle?.text = postListCell
 
         return cell
     }
@@ -54,17 +58,48 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
         if editingStyle == UITableViewCell.EditingStyle.delete {
             Post_List.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+            boardTotalNum.text = "총\(Post_List.count)개의 보드"
         }
+        
     }
     
     //기본 세팅
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        searchBar.delegate = self
+        
+        for item in Post_List {
+            keywordsData.append(item.keywords)
+        }
+        
+        filteredData = keywordsData
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        boardTotalNum.text = "총 \(Post_List.count)개의 보드"
+    }
+    
+    //검색바 config
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filteredData = []
+        
+        if searchText == "" {
+            filteredData = keywordsData
+        } else {
+            for keyword in keywordsData {
+
+                if keyword.lowercased().contains(searchText.lowercased()) {
+                    filteredData.append(keyword)
+                }
+            }
+        }
+        self.keywordListTableView.reloadData()
+        
+    }
     
     /*
     public protocol UITableViewDataSource : NSObjectProtocol {
