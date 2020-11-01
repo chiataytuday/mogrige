@@ -9,11 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var ratioView: UIView!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var keyword01: UILabel!
     @IBOutlet weak var keyword02: UILabel!
     @IBOutlet weak var keyword03: UILabel!
-    @IBOutlet weak var thumbImageView: UIImageView!
+    @IBOutlet weak var message: UILabel!
     @IBAction func resetButton(_ sender: Any) {
         // resetCard()
     }
@@ -41,19 +42,19 @@ class ViewController: UIViewController {
         //카드를 원래 자리로 복귀
         func cardFormatReset() {
             card.center = self.view.center
-            thumbImageView.alpha = 0
+            message.alpha = 0
             card.transform = CGAffineTransform.identity
             animate()
         }
         
         
         if xFromCenter > 0 {
-            thumbImageView.image = UIImage(named: "thumbsUp")
+            message.text = "저장합니다"
         } else {
-            thumbImageView.image = UIImage(named: "thumbsDown")
+            message.text = "다음 키워드"
         }
         
-        thumbImageView.alpha = abs(xFromCenter) / view.center.x
+        message.alpha = abs(xFromCenter) / view.center.x
         
         //card fade away when it passes certain pointof x-axis
         if sender.state == UIGestureRecognizer.State.ended {
@@ -155,6 +156,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         //카드 tilt 애니메이션 추가
         divisor = (view.frame.width / 2) / 0.61
+        message.alpha = 0
     }
     
     
