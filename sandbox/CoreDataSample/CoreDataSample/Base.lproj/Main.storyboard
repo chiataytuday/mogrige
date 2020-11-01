@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CoreDataSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="i7d-0J-dhE">
+                                <rect key="frame" x="0.0" y="33" width="414" height="44"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c5o-gb-IBu">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <items>
+                                            <navigationItem id="Wyx-QV-UAk">
+                                                <rightBarButtonItems>
+                                                    <barButtonItem systemItem="add" id="HvN-3a-BdU">
+                                                        <connections>
+                                                            <action selector="addTappedWith_sender:" destination="BYZ-38-t0r" id="hBc-4A-gOg"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                    <barButtonItem title="sort" id="tiD-Su-Tn6">
+                                                        <connections>
+                                                            <action selector="sortWith_sender:" destination="BYZ-38-t0r" id="JTq-0a-SmA"/>
+                                                        </connections>
+                                                    </barButtonItem>
+                                                </rightBarButtonItems>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="c5o-gb-IBu" firstAttribute="centerX" secondItem="i7d-0J-dhE" secondAttribute="centerX" id="vhv-IU-BVD"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SXJ-GI-73d">
+                                <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonCell" id="NNM-AA-j73">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NNM-AA-j73" id="5Pc-zI-XOB">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i7d-0J-dhE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RZg-HK-VkU"/>
+                            <constraint firstItem="SXJ-GI-73d" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Yob-i5-vje"/>
+                            <constraint firstItem="SXJ-GI-73d" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="hTT-w9-aVv"/>
+                            <constraint firstItem="SXJ-GI-73d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k20-UY-atD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="i7d-0J-dhE" secondAttribute="bottom" constant="785" id="nx5-Ku-Pvy"/>
+                            <constraint firstItem="SXJ-GI-73d" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="t0u-ft-bSl"/>
+                            <constraint firstItem="i7d-0J-dhE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wWq-a4-e2l"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="SXJ-GI-73d" id="mbI-c8-jdu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
