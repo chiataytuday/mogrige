@@ -31,11 +31,12 @@ class ViewController: UIViewController {
         let card = sender.view!
         let point = sender.translation(in: view)
         let xFromCenter = card.center.x - view.center.x
-        let scale = min(100/abs(xFromCenter), 1)
+        //let scale = min(100/abs(xFromCenter), 1)
         
         card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
         //카드 돌아가는 애니메이션
-        card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
+        card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor)
+            //.scaledBy(x: scale, y: scale)
         
         //카드를 원래 자리로 복귀
         func cardFormatReset() {
@@ -60,16 +61,18 @@ class ViewController: UIViewController {
             if card.center.x < 85 {
                 // move off to the left side
                 UIView.animate(withDuration: 0.3, animations: {
-                    card.center = CGPoint(x: card.center.x - 300, y: card.center.y + 61)
+                    card.center = CGPoint(x: card.center.x - 300, y: card.center.y + 20)
                 })
                 // lastKeywords = [keyword01.text!, keyword02.text!, keyword03.text!]
                 cardFormatReset()
-                randomPicked()
+                randomPicked1()
+                randomPicked2()
+                randomPicked3()
                 return
-            } else if card.center.x > (view.frame.width - 85) {
+            } else if card.center.x > (view.frame.width - 75) {
                 // move off to the right side
                 UIView.animate(withDuration: 0.3,animations: {
-                    card.center = CGPoint(x: card.center.x + 300, y: card.center.y + 61)
+                    card.center = CGPoint(x: card.center.x + 300, y: card.center.y + 20)
                 })
                 //화면전환 "ModalViewController"의 sroryboardID 지정 필요
                 let modalVC = self.storyboard?.instantiateViewController(withIdentifier: "modalVC")
@@ -93,21 +96,46 @@ class ViewController: UIViewController {
         })
     }
     
-    // 랜덤키워드 만들기
-    func randomPicked() {
+    // 랜덤키워드 만들기 - 1
+    func randomPicked1() {
         var resultSet = Set<String>()
         
         while resultSet.count < 3 {
-            let randomIndext = Int.random(in: 0...keywordList.count-1)
-            resultSet.insert(keywordList[randomIndext])
+            let randomIndext = Int.random(in: 0...keywordList1.count-1)
+            resultSet.insert(keywordList1[randomIndext])
         }
         let resultArray = Array(resultSet)
         
         keyword01.text = resultArray[0]
-        keyword02.text = resultArray[1]
-        keyword03.text = resultArray[2]
-        
     }
+    
+    // 랜덤키워드 만들기 - 2
+    func randomPicked2() {
+        var resultSet = Set<String>()
+        
+        while resultSet.count < 3 {
+            let randomIndext = Int.random(in: 0...keywordList2.count-1)
+            resultSet.insert(keywordList2[randomIndext])
+        }
+        let resultArray = Array(resultSet)
+        
+        keyword02.text = resultArray[0]
+    }
+    
+    // 랜덤키워드 만들기 - 3
+    func randomPicked3() {
+        var resultSet = Set<String>()
+        
+        while resultSet.count < 3 {
+            let randomIndext = Int.random(in: 0...keywordList3.count-1)
+            resultSet.insert(keywordList3[randomIndext])
+        }
+        let resultArray = Array(resultSet)
+        
+        keyword03.text = resultArray[0]
+    }
+    
+    
     
     //직전 단어 다시 보기 버튼
     /*
@@ -132,7 +160,9 @@ class ViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        randomPicked()
+        randomPicked1()
+        randomPicked2()
+        randomPicked3()
     }
 
     
