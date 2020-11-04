@@ -114,7 +114,7 @@ class ViewController: UIViewController {
         randomTip.textColor = UIColor(red: 130/255, green: 130/255, blue: 130/255, alpha: 1)
         
         let lineStyle = NSMutableParagraphStyle()
-        lineStyle.lineSpacing = 5
+        lineStyle.lineSpacing = 3
         lineStyle.alignment = .center
         let attributedLine = NSAttributedString(string: randomTip.text!, attributes: [.paragraphStyle: lineStyle])
         randomTip.attributedText = attributedLine
@@ -199,17 +199,7 @@ class ViewController: UIViewController {
         cardView.layer.shadowOffset = CGSize(width: 0, height: 11)
         cardView.layer.shadowRadius = 10
         
-        //하단 라인 디자인
-        //let thickness: CGFloat = 0.8
-        let thicknessBold: CGFloat = 1.4
-        //let bottomLine = CALayer()
-        let topLine = CALayer()
-        topLine.frame = CGRect(x: 0.0, y: -12, width: self.randomTip.frame.width, height: thicknessBold)
-        topLine.backgroundColor = UIColor.darkGray.cgColor
-        randomTip.layer.addSublayer(topLine)
-        /*bottomLine.frame = CGRect(x: 0.0, y: self.caution.frame.size.height + 10, width: self.caution.frame.width, height: thickness)
-        bottomLine.backgroundColor = UIColor(red: 200/255, green: 200/255, blue: 200/255, alpha: 1).cgColor
-        caution.layer.addSublayer(bottomLine)*/
+
     }
     
     
