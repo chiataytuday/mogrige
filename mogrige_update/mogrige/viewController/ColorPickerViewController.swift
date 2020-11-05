@@ -9,8 +9,17 @@ import UIKit
 
 class ColorPickerViewController: UIViewController {
 
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //네비게이션 back 버튼 텍스트 없애기 + 색변경
+        self.navigationController?.navigationBar.tintColor = UIColor.darkGray
+        
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
 
         // Do any additional setup after loading the view.
     }

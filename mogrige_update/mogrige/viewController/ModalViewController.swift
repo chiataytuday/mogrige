@@ -12,22 +12,36 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
-    var selectedTitle: String?
+    var selectedTitle: String? = ""
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var textTitle: UITextView!
     @IBOutlet weak var textDescription: UITextView!
     
-    @IBAction func backMoadal(
-        _ segue: UIStoryboardSegue) {
+    // 뭔가 작성했을 때만 경고창 뜨는걸로 하고 싶었으나 실패!! 
+    @IBAction func backToHome(_ sender: Any) {
+        if textTitle.text != nil {
+            // create the alert
+            let alert = UIAlertController(title: "UIAlertController", message: "지금까지 작성한 내용은 저장되지 않습니다. 처음으로 돌아갈까요?", preferredStyle: UIAlertController.Style.alert)
+
+            // add the actions (buttons)
+            alert.addAction(UIAlertAction(title: "남아있기", style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "처음으로", style: UIAlertAction.Style.cancel, handler: {ACTION in self.dismiss(animated: true)}))
+
+            // show the alert
+                self.present(alert, animated: true, completion: nil)
+        } else {dismiss(animated: true)}
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //네비게이션 타이틀 폰트 변경
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "NotoSerifCJKkr-Medium", size: 15)!]
+        
+        
         // title Label에 랜덤키워드 띄우기
-        mainTitle.text = selectedTitle
+        self.mainTitle.text = selectedTitle
         
         // textview placeholder 기본 설정
         textTitle.delegate = self
@@ -90,7 +104,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     }
     */
     
-    // textView placeholder 구현 함수
+    // textView placeholder 구현 함수 //펑션나누기
     func textViewSetupView() {
         if textDescription.textColor == UIColor.lightGray {
             textDescription.text = nil

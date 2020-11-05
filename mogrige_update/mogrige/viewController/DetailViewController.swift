@@ -51,7 +51,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     let paragraphStyle = NSMutableParagraphStyle()
     func textFrame2Style() {
         //textFrame2 의 줄간격 설정과 텍스트 넣는 곳
-        paragraphStyle.lineSpacing = 5 //이게 줄간격
+        paragraphStyle.lineSpacing = 4//이게 줄간격
         let attributedText = NSAttributedString(string: "부엌 창문에선 노을 볕이 길게 드리워지고 고양이는 초록 체크무늬 담요에 누워 잠들었다.", attributes: [.paragraphStyle : paragraphStyle])
         textFrame2.numberOfLines = 0
         textFrame2.sizeToFit()
@@ -59,7 +59,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func textFrame3Style() {
-        paragraphStyle.lineSpacing = 5//이게 줄간격
+        paragraphStyle.lineSpacing = 3.5//이게 줄간격
         
         let attributedText = NSAttributedString(string: "전체적으로 브라운과 오렌지의 노을 빛으로 배색하고 포인트 컬러를 체크무늬에 표현한다. 늘어진 자세의 고양이는 검은 실루엣으로 하여 그림자와 그 형태로만 간접적으로 그려 쓸쓸함과 따뜻함을 동시에 보여준다.", attributes: [.paragraphStyle : paragraphStyle])
         textFrame3.numberOfLines = 0

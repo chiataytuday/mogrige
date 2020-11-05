@@ -18,10 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var randomTip: UILabel!
     
     
-    @IBAction func closeModal(
-        _ segue: UIStoryboardSegue) {
-    }
-    
     var divisor: CGFloat!
     var lastKeywords: Array<Any> = []
     
@@ -46,14 +42,13 @@ class ViewController: UIViewController {
             animate()
         }
         
-        
-        /*if xFromCenter > 0 {
-            message.text = "저장합니다"
+        //******. 저장합니다는 잘되는데 다음키워드는 어느 x좌표의 순간! 지진이 나네요. ******
+        if card.center.x < 85 {
+            randomTip.text = "다음 키워드"
         } else {
-            message.text = "다음 키워드"
-        }*/
+            randomTip.text = "저장합니다"
+        }
         
-        //message.alpha = abs(xFromCenter) / view.center.x
         
         //card fade away when it passes certain pointof x-axis
         if sender.state == UIGestureRecognizer.State.ended {
@@ -68,20 +63,18 @@ class ViewController: UIViewController {
                 randomPicked2()
                 randomPicked3()
                 randomTips()
-                //message.text = "저장합니다"
                 return
             } else if card.center.x > (view.frame.width - 75) {
                 // move off to the right side
                 UIView.animate(withDuration: 0.3,animations: {
                     card.center = CGPoint(x: card.center.x + 300, y: card.center.y + 20)
                 })
-                //화면전환 "ModalViewController"의 sroryboardID 지정 필요
-                let modalVC = self.storyboard?.instantiateViewController(withIdentifier: "modalVC")
-                modalVC?.modalTransitionStyle = .coverVertical
-                self.present(modalVC!, animated: true, completion: nil)
-               
+                
+                //화면전환
+                self.performSegue(withIdentifier: "toEditor", sender: nil)
+                
                 cardFormatReset()
-                //message.text = "다른 단어를 봅니다"
+                
                 return
             } else {
                 cardFormatReset()
@@ -134,12 +127,6 @@ class ViewController: UIViewController {
         let resultArray = Array(resultSet)
         keyword01.text = resultArray[0]
         
-        //언더라인
-        let thickness: CGFloat = 0.8
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: self.keyword01.frame.size.height + 5, width: self.keyword01.frame.width, height: thickness)
-        bottomLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
-        keyword01.layer.addSublayer(bottomLine)
     }
     
     // 랜덤키워드 만들기 - 2
@@ -153,13 +140,6 @@ class ViewController: UIViewController {
         let resultArray = Array(resultSet)
         keyword02.text = resultArray[1]
         
-        //언더라인2
-        let thickness: CGFloat = 0.8
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: self.keyword02.frame.size.height + 5, width: self.keyword02.frame.width, height: thickness)
-        bottomLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
-        keyword02.layer.addSublayer(bottomLine)
-        
     }
     
     // 랜덤키워드 만들기 - 3
@@ -172,13 +152,6 @@ class ViewController: UIViewController {
         }
         let resultArray = Array(resultSet)
         keyword03.text = resultArray[2]
-        
-        //언더라인3
-        let thickness: CGFloat = 0.8
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: self.keyword03.frame.size.height + 5, width: self.keyword03.frame.width, height: thickness)
-        bottomLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
-        keyword03.layer.addSublayer(bottomLine)
         
     }
     
@@ -199,6 +172,29 @@ class ViewController: UIViewController {
         cardView.layer.shadowOffset = CGSize(width: 0, height: 11)
         cardView.layer.shadowRadius = 10
         
+        //언더라인1
+        let thickness: CGFloat = 0.8
+        let bottomLine1 = CALayer()
+        let bottomLine2 = CALayer()
+        let bottomLine3 = CALayer()
+        
+        bottomLine1.frame = CGRect(x: 0.0, y: self.keyword01.frame.size.height + 5, width: self.keyword01.frame.width, height: thickness)
+        bottomLine1.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
+        keyword01.layer.addSublayer(bottomLine1)
+        
+        //언더라인2
+        bottomLine2.frame = CGRect(x: 0.0, y: self.keyword02.frame.size.height + 5, width: self.keyword02.frame.width, height: thickness)
+        bottomLine2.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
+        keyword02.layer.addSublayer(bottomLine2)
+        
+        //언더라인3
+        bottomLine3.frame = CGRect(x: 0.0, y: self.keyword03.frame.size.height + 5, width: self.keyword03.frame.width, height: thickness)
+        bottomLine3.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 1).cgColor
+        keyword03.layer.addSublayer(bottomLine3)
+        
+        
+        
+        
 
     }
     
@@ -217,18 +213,21 @@ class ViewController: UIViewController {
     
     
     // 모달에 데이터 전달하기
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        let pickedKeword = [keyword01.text, keyword02.text, keyword03.text]
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         guard let vc = segue.destination as? ModalViewController else { return }
         
-        let selectedTitle:String! = "\(pickedKeword[0]!),  \(pickedKeword[1]!),  \(pickedKeword[2]!)"
-
-        vc.selectedTitle = selectedTitle
-        
+        vc.selectedTitle = "\(keyword01.text!),  \(keyword02.text!),  \(keyword03.text!)"
+    }*/
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditor" {
+            if let destinationVC = segue.destination as? UINavigationController,
+               let ChildVC = destinationVC.viewControllers.first as? ModalViewController{
+                ChildVC.selectedTitle = "\(keyword01.text!),  \(keyword02.text!),  \(keyword03.text!)"
+            }
+        }
     }
-
 
 }
 
