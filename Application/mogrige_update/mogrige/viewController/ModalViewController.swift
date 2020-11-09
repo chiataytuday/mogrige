@@ -54,6 +54,14 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = self.storyboard?.instantiateViewController(identifier: "DetailMoodboard") as? DetailViewController {
+            vc.firstKeyWord = "첫번째 키워드"
+            vc.secondKeyWord = "두번째 키워드"
+            vc.thirdKeyWord = "세번째 키워드"
+            present(vc, animated: true, completion: nil)
+        }
+    }
     
     // 이미지 추가 버튼 클릭시 액션시트 구현 및 카메라, 포토라이브러리 설정
     @IBAction func buttonDidTap(_ sender: UIButton) {
