@@ -19,6 +19,10 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var keywordListTableView: UITableView!
     @IBOutlet weak var boardTotalNum: UILabel!
     
+    @IBAction func closeModal(
+            _ segue: UIStoryboardSegue) {
+        }
+    
     //
     
     //Cell 높이 조절

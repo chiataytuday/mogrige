@@ -17,7 +17,6 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var randomTip: UILabel!
     
-    
     var divisor: CGFloat!
     var lastKeywords: Array<Any> = []
     
@@ -224,7 +223,7 @@ class ViewController: UIViewController {
         if segue.identifier == "toEditor" {
             if let destinationVC = segue.destination as? UINavigationController,
                let ChildVC = destinationVC.viewControllers.first as? ModalViewController{
-                ChildVC.selectedTitle = "\(keyword01.text!),  \(keyword02.text!),  \(keyword03.text!)"
+                ChildVC.selectedTitle = [(keyword01.text!),  (keyword02.text!),  (keyword03.text!)]
             }
         }
     }

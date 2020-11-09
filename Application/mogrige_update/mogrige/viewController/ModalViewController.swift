@@ -12,7 +12,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
     let imagePicker: UIImagePickerController! = UIImagePickerController()
     
-    var selectedTitle: String? = ""
+    var selectedTitle: [String?] = []
     
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var textTitle: UITextView!
@@ -41,7 +41,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         
         
         // title Label에 랜덤키워드 띄우기
-        self.mainTitle.text = selectedTitle
+        self.mainTitle.text = "\(selectedTitle[0]!), \(selectedTitle[1]!), \(selectedTitle[2]!)"
         
         // textview placeholder 기본 설정
         textTitle.delegate = self
@@ -56,9 +56,9 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "DetailMoodboard") as? DetailViewController {
-            vc.firstKeyWord = "첫번째 키워드"
-            vc.secondKeyWord = "두번째 키워드"
-            vc.thirdKeyWord = "세번째 키워드"
+            vc.firstKeyWord = selectedTitle[0]
+            vc.secondKeyWord = selectedTitle[1]
+            vc.thirdKeyWord = selectedTitle[2]
             present(vc, animated: true, completion: nil)
         }
     }
