@@ -21,10 +21,17 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var first: UILabel!
+    @IBOutlet weak var second: UILabel!
+    @IBOutlet weak var third: UILabel!
     
     
     @IBOutlet weak var textFrame2: UILabel!
     @IBOutlet weak var textFrame3: UILabel!
+    
+    var firstKeyWord: String?
+    var secondKeyWord: String?
+    var thirdKeyWord: String?
     
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -84,6 +91,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         setUpScreen()
         
+        first.text = firstKeyWord
+        second.text = secondKeyWord
+        third.text = thirdKeyWord
         
         //frame1 그림자
         frame1.layer.shadowColor = UIColor.black.cgColor
