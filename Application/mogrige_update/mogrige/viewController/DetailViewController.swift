@@ -32,6 +32,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     var firstKeyWord: String?
     var secondKeyWord: String?
     var thirdKeyWord: String?
+    var textTitle: String?
+    var textDescription: String?
+    
     
     @IBAction func closeButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -59,7 +62,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     func textFrame2Style() {
         //textFrame2 의 줄간격 설정과 텍스트 넣는 곳
         paragraphStyle.lineSpacing = 4//이게 줄간격
-        let attributedText = NSAttributedString(string: "부엌 창문에선 노을 볕이 길게 드리워지고 고양이는 초록 체크무늬 담요에 누워 잠들었다.", attributes: [.paragraphStyle : paragraphStyle])
+        var attributedText: NSAttributedString
+        if textTitle == nil {
+            attributedText = NSAttributedString(string: "부엌 창문에선 노을 볕이 길게 드리워지고 고양이는 초록 체크무늬 담요에 누워 잠들었다.", attributes: [.paragraphStyle : paragraphStyle])
+        } else {
+            attributedText = NSAttributedString(string: textTitle!, attributes: [.paragraphStyle : paragraphStyle])
+        }
+        
         textFrame2.numberOfLines = 0
         textFrame2.sizeToFit()
         textFrame2.attributedText = attributedText
@@ -67,8 +76,14 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     func textFrame3Style() {
         paragraphStyle.lineSpacing = 3.5//이게 줄간격
+        var attributedText: NSAttributedString
+        if textTitle == nil {
+            attributedText = NSAttributedString(string: "전체적으로 브라운과 오렌지의 노을 빛으로 배색하고 포인트 컬러를 체크무늬에 표현한다. 늘어진 자세의 고양이는 검은 실루엣으로 하여 그림자와 그 형태로만 간접적으로 그려 쓸쓸함과 따뜻함을 동시에 보여준다.", attributes: [.paragraphStyle : paragraphStyle])
+        } else {
+            attributedText = NSAttributedString(string: textDescription!, attributes: [.paragraphStyle : paragraphStyle])
+        }
         
-        let attributedText = NSAttributedString(string: "전체적으로 브라운과 오렌지의 노을 빛으로 배색하고 포인트 컬러를 체크무늬에 표현한다. 늘어진 자세의 고양이는 검은 실루엣으로 하여 그림자와 그 형태로만 간접적으로 그려 쓸쓸함과 따뜻함을 동시에 보여준다.", attributes: [.paragraphStyle : paragraphStyle])
+        /// let
         textFrame3.numberOfLines = 0
         textFrame3.sizeToFit()
         textFrame3.attributedText = attributedText
@@ -89,8 +104,8 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         pageControl.pageIndicatorTintColor = UIColor.darkGray
         pageControl.currentPageIndicatorTintColor = UIColor.white
         
+        // 수정필요함
         setUpScreen()
-        
         first.text = firstKeyWord
         second.text = secondKeyWord
         third.text = thirdKeyWord
