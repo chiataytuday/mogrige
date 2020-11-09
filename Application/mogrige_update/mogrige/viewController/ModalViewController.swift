@@ -59,6 +59,9 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
             vc.firstKeyWord = selectedTitle[0]
             vc.secondKeyWord = selectedTitle[1]
             vc.thirdKeyWord = selectedTitle[2]
+            vc.textTitle = textTitle.text
+            vc.textDescription =  textDescription.text
+            
             present(vc, animated: true, completion: nil)
         }
     }
