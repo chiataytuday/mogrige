@@ -105,23 +105,26 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     */
     
     // textView placeholder 구현 함수 //펑션나누기
-    func textViewSetupView() {
-        if textDescription.textColor == UIColor.lightGray {
-            textDescription.text = nil
-            textDescription.textColor = UIColor.black
-        } else if textDescription.textColor == UIColor.black {
-            textDescription.text = "떠오른 영감을 설명해 주세요"
-            textDescription.textColor = UIColor.lightGray
-        }
-        
-        if textTitle.textColor == UIColor.lightGray {
-            textTitle.text = nil
+    
+    func firstTextViewSetupView() {
+        if textTitle.text == "세 단어로 하나의 타이틀 문장을 만들어 주세요" {
+            textTitle.text = ""
             textTitle.textColor = UIColor.black
-        } else if textTitle.textColor == UIColor.black {
+        } else if textTitle.text == "" {
             textTitle.text = "세 단어로 하나의 타이틀 문장을 만들어 주세요"
             textTitle.textColor = UIColor.lightGray
         }
-        
+    }
+    
+    func secondTextViewSetupView() {
+        if textDescription.text == "떠오른 영감을 설명해 주세요" {
+            textDescription.text = ""
+            textDescription.textColor = UIColor.black
+        } else if textDescription.text == "" {
+            textDescription.text = "떠오른 영감을 설명해 주세요"
+            textDescription.textColor = UIColor.lightGray
+        }
+  
     }
 }
 
@@ -129,11 +132,25 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
 extension ModalViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        textViewSetupView()
+        firstTextViewSetupView()
+        secondTextViewSetupView()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        textViewSetupView()
+        if textTitle.text == "" {
+            firstTextViewSetupView()
+        }
+        
+        if textDescription.text == "" {
+            secondTextViewSetupView()
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+        }
+        return true
     }
     
 }
