@@ -48,8 +48,8 @@ class KeywordListViewController: UIViewController, UITableViewDelegate, UITableV
                 
         let postListCell = filteredData[indexPath.row]
         
-        //board 내 그림 번호 설정
-        cell.boardNum?.text = "Board #\(indexPath.row + 1)"
+        //board 내 그림 번호 설정 > 삭제
+        //cell.boardNum?.text = "Board #\(indexPath.row + 1)"
         
         //키워드로 타이틀 설정
         cell.keywordTitle?.text = postListCell

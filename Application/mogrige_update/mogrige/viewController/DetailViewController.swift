@@ -106,9 +106,9 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         // 수정필요함
         setUpScreen()
-        first.text = firstKeyWord
-        second.text = secondKeyWord
-        third.text = thirdKeyWord
+        first?.text = firstKeyWord
+        second?.text = secondKeyWord
+        third?.text = thirdKeyWord
         
         //frame1 그림자
         frame1.layer.shadowColor = UIColor.black.cgColor
