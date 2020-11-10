@@ -11,8 +11,16 @@ import UIKit
 class DetailViewController: UIViewController, UIScrollViewDelegate {
     
 
+//    @IBOutlet var imgView1: UIImageView!
+//    @IBOutlet var imgView2: UIImageView!
+//    @IBOutlet var imgView3: UIImageView!
+//    @IBOutlet var imgView4: UIImageView!
+//    @IBOutlet var imgView5: UIImageView!
+//
+//    var sharedImg: [UIImage?] = []
+    
+    
     @IBOutlet weak var frame1: UIView!
-    @IBOutlet weak var frame1Img: UIImageView!
     @IBOutlet weak var frame2: UIView!
     @IBOutlet weak var frame3: UIView!
     @IBOutlet weak var frame4: UIView!
@@ -91,6 +99,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // ModalViewController에서 전달하는 이미지 받아볼라 했지만 실패
+//        self.imgView1.image = sharedImg[0]
+//        self.imgView2.image = sharedImg[1]
+//        self.imgView3.image = sharedImg[2]
+//        self.imgView4.image = sharedImg[3]
+//        self.imgView5.image = sharedImg[4]
         
         view.backgroundColor = UIColor(red: 240/255, green: 239/255, blue: 238/255, alpha: 1)
 
