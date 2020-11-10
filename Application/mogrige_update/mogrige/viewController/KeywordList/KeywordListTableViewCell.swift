@@ -20,7 +20,7 @@ class KeywordListTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    @IBOutlet weak var boardNum: UILabel!
+    
     @IBOutlet weak var dateCreated: UILabel!
     @IBOutlet weak var bookmarkButton: UIButton!
     
