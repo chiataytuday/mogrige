@@ -8,6 +8,9 @@
 import UIKit
 import MobileCoreServices
 import YPImagePicker
+import Photos
+import PhotosUI
+
 
 class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
@@ -18,6 +21,9 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
     @IBOutlet weak var mainTitle: UILabel!
     @IBOutlet weak var textTitle: UITextView!
     @IBOutlet weak var textDescription: UITextView!
+    
+    var config = YPImagePickerConfiguration()
+
     
     // 뭔가 작성했을 때만 경고창 뜨는걸로 하고 싶었으나 실패!! 
     @IBAction func backToHome(_ sender: Any) {
@@ -53,7 +59,62 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         textDescription.text = "떠오른 영감을 설명해 주세요"
         textDescription.textColor = UIColor.lightGray
         
+        config.isScrollToChangeModesEnabled = true
+        config.onlySquareImagesFromCamera = true
+        config.usesFrontCamera = false
+        config.showsPhotoFilters = true
+        config.showsVideoTrimmer = true
+        config.shouldSaveNewPicturesToAlbum = true
+        config.albumName = "DefaultYPImagePickerAlbumName"
+        config.startOnScreen = YPPickerScreen.photo
+        config.screens = [.library, .photo]
+        config.showsCrop = .none
+        config.targetImageSize = YPImageSize.original
+        config.overlayView = UIView()
+        config.hidesStatusBar = true
+        config.hidesBottomBar = false
+        config.hidesCancelButton = false
+        config.preferredStatusBarStyle = UIStatusBarStyle.default
+        //config.bottomMenuItemSelectedColour = UIColor(r: 38, g: 38, b: 38)
+        //config.bottomMenuItemUnSelectedColour = UIColor(r: 153, g: 153, b: 153)
+        //config.filters = [DefaultYPFilters...]
+        config.maxCameraZoomFactor = 1.0
+        //config.preSelectItemOnMultipleSelection = true
+        //config.fonts..
+        config.library.options = nil
+        config.library.onlySquare = false
+        config.library.isSquareByDefault = true
+        config.library.minWidthForItem = nil
+        config.library.mediaType = YPlibraryMediaType.photo
+        config.library.defaultMultipleSelection = false
+        config.library.maxNumberOfItems = 5
+        config.library.minNumberOfItems = 1
+        config.library.numberOfItemsInRow = 5
+        config.library.spacingBetweenItems = 1.0
+        config.library.skipSelectionsGallery = false
+        config.library.preselectedItems = nil
+        
     }
+    
+    
+    // 이미지 추가 버튼 클릭시 액션시트 구현 및 카메라, 포토라이브러리 설정
+    @IBAction func buttonDidTap(_ sender: UIButton) {
+        config.library.maxNumberOfItems = 5
+        let picker = YPImagePicker(configuration: config)
+        picker.didFinishPicking { [unowned picker] items, _ in
+            for item in items {
+                    switch item {
+                    case .photo(let photo):
+                        print(photo)
+                    case .video(let video):
+                        print(video)
+                    }
+            }
+            picker.dismiss(animated: true, completion: nil)
+        }
+        present(picker, animated: true, completion: nil)
+        }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "DetailMoodboard") as? DetailViewController {
@@ -67,44 +128,7 @@ class ModalViewController: UIViewController, UIImagePickerControllerDelegate, UI
         }
     }
     
-    // 이미지 추가 버튼 클릭시 액션시트 구현 및 카메라, 포토라이브러리 설정
-    @IBAction func buttonDidTap(_ sender: UIButton) {
-        var config = YPImagePickerConfiguration()
-        config.library.maxNumberOfItems = 5
-        
-        let picker = YPImagePicker(configuration: config)
-        picker.didFinishPicking { [unowned picker] items, cancelled in
-            
-            var selectedImg: [UIImage] = [] //이미지 넣을 빈배열 > 이게 코어데이터에 있어야하지 않을까
-            
-            if cancelled {
-                picker.dismiss(animated: true, completion: nil)
-                return
-            }
-            
-            for item in items {
-                switch item {
-                case .photo(let photo):
-                    //이미지를 배열에 넣어주는 code
-                    selectedImg.append(photo.image)
-                    print(photo)
-                    
-                default:
-                    print("")
-                }
-            }
-            
-            picker.dismiss(animated: true) {
-                //닫을 때 무드보드에 전달
-                //아래 코드 실험했지만 실패, 이 부분에서 크러시남
-//                let shareVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-//                for index in 0..<selectedImg.count {
-//                    shareVC.sharedImg.append(selectedImg[index])
-                }
-            }
-        present(picker, animated: true, completion: nil)
 
-        }
     
     // 선택한 이미지를 UIImageView에 띄우는 기능
     /*

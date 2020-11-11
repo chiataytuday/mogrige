@@ -21,9 +21,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>test</string>
+	<string>This app will use Camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app will use Microgpone</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>test</string>
+	<string>This qpp will use Photo Library</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoSerifCJKkr-Bold</string>

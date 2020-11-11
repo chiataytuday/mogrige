@@ -48,10 +48,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    
-    
-    
-    
     //아트웍 이미지 어레이
     var artworks = [
         "IMG_9572",
@@ -61,9 +57,6 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         "dummy_img5"
     ]
     
-
-    
-    
     var frame = CGRect.zero
     
     let paragraphStyle = NSMutableParagraphStyle()
@@ -71,7 +64,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         //textFrame2 의 줄간격 설정과 텍스트 넣는 곳
         paragraphStyle.lineSpacing = 4//이게 줄간격
         var attributedText: NSAttributedString
-        if textTitle == nil {
+        if textTitle == "" {
             attributedText = NSAttributedString(string: "부엌 창문에선 노을 볕이 길게 드리워지고 고양이는 초록 체크무늬 담요에 누워 잠들었다.", attributes: [.paragraphStyle : paragraphStyle])
         } else {
             attributedText = NSAttributedString(string: textTitle!, attributes: [.paragraphStyle : paragraphStyle])
@@ -85,7 +78,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     func textFrame3Style() {
         paragraphStyle.lineSpacing = 3.5//이게 줄간격
         var attributedText: NSAttributedString
-        if textTitle == nil {
+        if textTitle == "" {
             attributedText = NSAttributedString(string: "전체적으로 브라운과 오렌지의 노을 빛으로 배색하고 포인트 컬러를 체크무늬에 표현한다. 늘어진 자세의 고양이는 검은 실루엣으로 하여 그림자와 그 형태로만 간접적으로 그려 쓸쓸함과 따뜻함을 동시에 보여준다.", attributes: [.paragraphStyle : paragraphStyle])
         } else {
             attributedText = NSAttributedString(string: textDescription!, attributes: [.paragraphStyle : paragraphStyle])
@@ -121,9 +114,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         
         // 수정필요함
         setUpScreen()
-        first?.text = firstKeyWord
-        second?.text = secondKeyWord
-        third?.text = thirdKeyWord
+            
+        first?.text = firstKeyWord!
+        second?.text = secondKeyWord!
+        third?.text = thirdKeyWord!
+        
         
         //frame1 그림자
         frame1.layer.shadowColor = UIColor.black.cgColor
